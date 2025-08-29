@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Land } from '../home-page/lands';
+import { Land } from '../models/land';
 
 @Component({
   selector: 'app-new-flat',

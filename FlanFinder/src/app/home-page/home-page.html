@@ -1,7 +1,7 @@
 <div class="box">
   <div class="header">
     <img src="assets/logo.png" alt="">
-    <p>Hello <b>User name</b></p> <!--Esperando que Rodrigo implemente la funcionalidad de guardar el dato de los usuarios-->
+    <p>Hello</p>
     <div class="dropdown">
       <button (click)="showContent(dropdown_content)"><img src="assets/icon.png" alt=""></button>
       <div class="dropdown-content" #dropdown_content>
@@ -43,10 +43,9 @@
               <p>Available from: {{ land.date }}</p>
             </div>
             <div class="contact">
-              @
-              <p><b>Contact:</b> {{ land.contactName }}</p>
-              <p><b>Email:</b> {{ land.contactEmail }}</p>
-              <p><b>Phone:</b> {{ land.contactPhone }}</p>
+              <p><b>Contact:</b> Jhon Doe</p>
+              <p><b>Email:</b> 'jhon.doe&#64;example.com'</p>
+              <p><b>Phone:</b> (123) 456-7890</p>
             </div>
             <div class="land-actions">
               <button type="button" (click)="addFav(land)">Add to Favourites</button>

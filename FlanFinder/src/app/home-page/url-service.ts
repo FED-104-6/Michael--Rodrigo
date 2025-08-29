@@ -9,7 +9,7 @@ export class UrlService {
   constructor(private router: Router, private dataService: DataService) {}
 
   navigateToFlatView(id: number): void {
-    if(id >= 0 && id < this.dataService.lands.length) {
+    if(id >= 0 && id < this.dataService.getAllElements().length) {
       const customUrl = `/flat-view/${id}`;
       this.router.navigateByUrl(customUrl);
     }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Land, DataService } from '../home-page/lands';
+import { DataService } from '../home-page/lands';
+import { Land } from '../models/land';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

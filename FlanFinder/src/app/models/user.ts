@@ -1,3 +1,5 @@
+import { Land } from "./land";
+
 export interface User {
   firstName: string;
   lastName: string;
@@ -5,4 +7,6 @@ export interface User {
   birthDate: string;
   password: string;
   role: string;
+  favorites?: Land[];
+  myFlats?: Land[];
 }

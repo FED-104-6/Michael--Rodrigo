@@ -1,7 +1,9 @@
 //Inteface for flat user
 import { Component } from '@angular/core';
-import { Land, DataService } from './lands';
+import { DataService } from './lands';
+import { Land } from '../models/land';
 import { UrlService } from './url-service';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-home-page',
@@ -11,8 +13,9 @@ import { UrlService } from './url-service';
 })
 export class HomePage {
   lands: Land[] = [];
+
   constructor(private urlService: UrlService, private dataService: DataService) {
-    this.lands = this.dataService.lands;
+    this.lands = this.dataService.getAllElements();
   }
 
   

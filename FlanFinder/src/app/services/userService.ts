@@ -44,6 +44,19 @@ export class UserService {
     return data ? JSON.parse(data) : null;
   }
 
+  updateUserData(data: Partial<User>): void {
+    const users = this.getUsers();
+    const currentUser = this.getCurrentUser();
+
+    if (currentUser) {
+      const index = users.findIndex(u => u.email === currentUser.email);
+      if (index > -1) {
+        users[index] = { ...users[index], ...data };
+        this.saveUsers(users);
+      }
+    }
+  }
+
   logout(): void {
     localStorage.removeItem(this.currentKey);
   }

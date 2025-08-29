@@ -1,7 +1,7 @@
 <div class="table">
     <h1>My Favourites</h1>
     <div class="lands-container">
-        @for (land of lands; track land) {
+        @for (land of lands; track land; let index = $index) {
             <div class="land-card">
                 <div class="land-head">
                     <img [src]="land.imageUrl" alt="preview of the land">
@@ -20,7 +20,7 @@
                     <button>See More</button>
                 </div>
                 <div class="land-actions">
-                    <button type="button">Delete Flat</button>
+                    <button type="button" (click)="deleteFav(index)">Delete Flat</button>
                 </div>
             </div>
         }

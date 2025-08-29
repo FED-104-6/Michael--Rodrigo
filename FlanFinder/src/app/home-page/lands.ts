@@ -1,11 +1,20 @@
 import { Injectable } from "@angular/core";
 import { Land } from "../models/land";
+import { User } from "../models/user";
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService{
-  lands: Land[] = [
+
+  Admin: User = {
+    firstName: 'Admin',
+    lastName: 'Admin',
+    email: 'admin@example.com',
+    birthDate: '1990-01-01',
+    password: 'admin123',
+    role: 'admin',
+    myFlats: [
       {
         city: 'Vancouver',
         streetName: 'Kingsway',
@@ -283,12 +292,14 @@ export class DataService{
         description: 'Quiet home near parks, hiking trails, and shopping areas.',
         imageUrl: 'assets/houses/house23.jpg'
       },
-  ];
+    ]
+  };
   
-  getElementByIndex(index: number): Land | undefined {
-    return this.lands[index];
+
+  getElementByIndex(index: number): Land {
+    return this.Admin.myFlats?.[index] ? this.Admin.myFlats[index] : (window.alert("Land not found"), {} as Land);
   }
-  editElement(index: number, newLand: Land): void {
-    this.lands[index] = { ...this.lands[index], ...newLand };
+  getAllElements(): Land[] {
+    return this.Admin.myFlats as Land[];
   }
 }
